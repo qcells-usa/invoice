@@ -12,34 +12,57 @@
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
-            background-color: #004a9c;
+            background-image: url('pexels-pixabay-356036.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: #004a9c;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            color: #004a9c;
         }
 
         main {
+            display: flex;
+            flex-wrap: wrap;
             padding: 20px;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            gap: 20px;
+        }
+
+        .content, .form {
+            flex: 1;
+            min-width: 300px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
-        section {
-            margin-bottom: 20px;
+        .content {
+            display: flex;
+            flex-direction: column;
         }
 
-        h2 {
+        .content h2 {
             color: #004a9c;
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -61,19 +84,18 @@
             border-left: 4px solid #004a9c;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #004a9c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .button:hover {
-            background-color: #003370;
+        .form {
+            height: auto;
+            display: flex;
+            align-items: stretch;
         }
 
         footer {
@@ -82,6 +104,18 @@
             padding: 10px;
             font-size: 0.9rem;
             color: #666;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 400px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .form iframe {
+                height: calc(100% - 40px);
+            }
         }
     </style>
 </head>
@@ -92,38 +126,42 @@
     </header>
 
     <main>
-        <section>
-            <p>Dear Vendors,</p>
-            <p>Thank you for working with Hanwha Q CELLS USA Corp. Please follow the below invoice guidelines to ensure swift payment processing for your work. All invoices must have the following information; otherwise, payment may be delayed while we work to clarify your submission. Please don't hesitate to reach out to <a href="mailto:usa-ap@qcells.com">usa-ap@qcells.com</a> if you have any questions.</p>
-        </section>
+        <div class="content">
+            <section>
+                <p>Dear Vendors,</p>
+                <p>Thank you for working with Hanwha Q CELLS USA Corp. Please follow the below invoice guidelines to ensure swift payment processing for your work. All invoices must have the following information; otherwise, payment may be delayed while we work to clarify your submission. Please don't hesitate to reach out to <a href="mailto:usa-ap@qcells.com">usa-ap@qcells.com</a> if you have any questions.</p>
+            </section>
 
-        <section>
-            <h2>Invoice Requirements</h2>
-            <ul>
-                <li>Must contain a unique invoice number. Duplicate invoice numbers will be rejected.</li>
-                <li>Only clean, legible copies will be accepted. Illegible copies will be rejected.</li>
-                <li>For project-specific invoices, please ensure you have received a Purchase Order Number (PO) or PPRC number from our procurement team before invoice submission.</li>
-                <li>Invoices must match the Task Order/Purchase Order and/or the Payment Application/Schedule of Value.</li>
-                <li>Invoicing in excess of 100% of the line item will be rejected.</li>
-                <li>Invoices with material purchases must indicate items as taxable, nontaxable, or sales tax inclusive.</li>
-                <li>For general invoices, you may submit with "General" or "N/A" on the PO# line in the submission form.</li>
-            </ul>
-        </section>
+            <section>
+                <h2>Invoice Requirements</h2>
+                <ul>
+                    <li>Must contain a unique invoice number. Duplicate invoice numbers will be rejected.</li>
+                    <li>Only clean, legible copies will be accepted. Illegible copies will be rejected.</li>
+                    <li>For project-specific invoices, please ensure you have received a Purchase Order Number (PO) or PPRC number from our procurement team before invoice submission.</li>
+                    <li>Invoices must match the Task Order/Purchase Order and/or the Payment Application/Schedule of Value.</li>
+                    <li>Invoicing in excess of 100% of the line item will be rejected.</li>
+                    <li>Invoices with material purchases must indicate items as taxable, nontaxable, or sales tax inclusive.</li>
+                    <li>For general invoices, you may submit with "General" or "N/A" on the PO# line in the submission form.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Additional Documentation</h2>
-            <p>If this is your first time working with us, please also provide the following:</p>
-            <ul>
-                <li>Current year signed W-9 for tax purposes.</li>
-                <li>Current wire instructions/preferred payment method.</li>
-            </ul>
-        </section>
+            <section>
+                <h2>Additional Documentation</h2>
+                <p>If this is your first time working with us, please also provide the following:</p>
+                <ul>
+                    <li>Current year signed W-9 for tax purposes.</li>
+                    <li>Current wire instructions/preferred payment method.</li>
+                </ul>
+            </section>
 
-        <section class="contact">
-            <p>If you have any questions, feel free to contact us at <a href="mailto:usa-ap@qcells.com">usa-ap@qcells.com</a>.</p>
-        </section>
+            <section class="contact">
+                <p>If you have any questions, feel free to contact us at <a href="mailto:usa-ap@qcells.com">usa-ap@qcells.com</a>.</p>
+            </section>
+        </div>
 
-        <a href="vendor.html" class="button">Invoice Submission Form</a>
+        <div class="form">
+            <iframe src="https://app.smartsheet.com/b/form/d95f310ed5ff4086918a710b21665cef"></iframe>
+        </div>
     </main>
 
     <footer>
